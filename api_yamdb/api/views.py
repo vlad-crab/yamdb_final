@@ -1,8 +1,3 @@
-import api.serializers as sz
-from api.filters import TitleFilter
-from api.permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
-                             YaMDBAdmin)
-from api.utils import code_generate
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
@@ -12,6 +7,12 @@ from rest_framework.filters import SearchFilter
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+
+import api.serializers as sz
+from api.filters import TitleFilter
+from api.permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
+                             YaMDBAdmin)
+from api.utils import code_generate
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
