@@ -1,5 +1,5 @@
-import string
 import random
+import string
 
 
 def code_generate(size=8):

@@ -10,9 +10,8 @@ class AuthorAdminModeratorOrReadOnly(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if (request.method == 'GET'
-                or (request.user.role in ('admin', 'moderator'))):
-            return True
-        elif request.method == 'POST' or (request.user == obj.author):
+           or (request.user.role in ('admin', 'moderator'))
+           or (request.method == 'POST' or (request.user == obj.author))):
             return True
         return False
 
