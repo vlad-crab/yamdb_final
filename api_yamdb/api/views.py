@@ -10,11 +10,11 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
-import api.serializers as sz
-from .filters import TitleFilter
-from .permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
+from filters import TitleFilter
+from permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
                           YaMDBAdmin)
-from .utils import code_generate
+from utils import code_generate
+import serializers as sz
 
 
 class TitlesViewSet(viewsets.ModelViewSet):
