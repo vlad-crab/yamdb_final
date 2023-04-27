@@ -65,6 +65,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            cd vladcrab/
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env

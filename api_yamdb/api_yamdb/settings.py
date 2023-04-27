@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '158.160.9.100',
     'web',
+    'nginx',
 ]
 
 
