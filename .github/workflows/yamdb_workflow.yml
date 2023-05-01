@@ -58,8 +58,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             cd vladcrab/
-            sudo docker-compose stop
-            sudo docker-compose rm web
+            sudo docker-compose down
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -69,7 +68,6 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
             sudo docker-compose up -d
-            sudo docker-compose exec web python3 manage.py migrate --noinput
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
